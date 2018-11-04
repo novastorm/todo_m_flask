@@ -7,6 +7,6 @@ from flask import (
 
 bp = Blueprint('main', __name__)
 
-@bp.route('/hello')
-def hello():
+@bp.route('/')
+def index():
     return 'Hello, World!'

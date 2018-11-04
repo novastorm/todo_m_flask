@@ -1,7 +1,9 @@
 from __future__ import absolute_import
-from todo.db import get_db, table_prefix
+from todo.database import get_database, table_prefix
 
-db = get_db()
+# from todo.models.user import User
+
+db = get_database()
 
 class Todo(db.Model):
     __tablename__ = '%s%s' % (table_prefix, 'todo')

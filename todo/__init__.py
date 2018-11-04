@@ -22,8 +22,9 @@ def create_app(config=None):
     except OSError:
         pass
 
-    register_blueprints(app)
-    register_database(app)
+    with app.app_context():
+        register_database(app)
+        register_blueprints(app)
 
     return app
 

@@ -12,7 +12,7 @@ class keys:
 
 def get_database():
     if keys.database not in g:
-        g.db = SQLAlchemy(current_app)
+        g.db = SQLAlchemy()
 
     return g.db
 
@@ -39,5 +39,7 @@ def init_db_command():
 
 
 def init_app(app):
-    app.teardown_appcontext(close_db)
+    db = get_database()
+    db.init_app(app)
+    # app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)

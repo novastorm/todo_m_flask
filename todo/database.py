@@ -10,14 +10,14 @@ class keys:
     database = 'db'
 
 
-def get_db():
+def get_database():
     if keys.database not in g:
         g.db = SQLAlchemy(current_app)
 
     return g.db
 
 def init_db():
-    db = get_db()
+    db = get_database()
     for name in find_modules('todo.models', recursive=True):
         print(name)
         mod = import_string(name)

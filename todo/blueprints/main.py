@@ -9,4 +9,4 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    return 'Hello, World!'
+    return redirect(url_for('todos.show_index_view'))

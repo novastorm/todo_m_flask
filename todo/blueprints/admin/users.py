@@ -6,7 +6,7 @@ from flask import (
 
 from todo.database import get_database
 
-bp = Blueprint('users', __name__, url_prefix='/todos')
+bp = Blueprint('users', __name__, url_prefix='/admin/users')
 
 routeTitle = 'Users'
 

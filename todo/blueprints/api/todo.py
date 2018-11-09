@@ -6,7 +6,7 @@ from flask import (
 
 from todo.database import get_database
 
-bp = Blueprint('api_v0_todos', __name__, url_prefix='/api/v0/todos')
+bp = Blueprint('api/v0/todos', __name__, url_prefix='/api/v0/todos')
 
 routeTitle = 'API Todos'
 
